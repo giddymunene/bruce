@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import API from "../api";
+
 function Login() {
   const [form, setForm] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
@@ -17,30 +17,31 @@ function Login() {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-xl mb-4">Login</h1>
-      {error && <p className="text-red-500">{error}</p>}
-      <input
-        type="text" placeholder="Username"
-        value={form.username}
-        onChange={(e) => setForm({ ...form, username: e.target.value })}
-        className="border p-1 block mb-2"
-      />
-      <input
-        type="password" placeholder="Password"
-        value={form.password}
-        onChange={(e) => setForm({ ...form, password: e.target.value })}
-        className="border p-1 block mb-2"
-      />
-      <button 
-        onClick={handleLogin}
-        className="bg-blue-500 text-white px-4 py-1 rounded"
-      >
-        Login
-      </button>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1 className="auth-title">Login</h1>
+
+        {error && <p className="auth-message error">{error}</p>}
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={form.username}
+          onChange={(e) => setForm({ ...form, username: e.target.value })}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+        />
+
+        <button onClick={handleLogin} className="auth-btn">
+          Login
+        </button>
+      </div>
     </div>
   );
 }
-
 
 export default Login;

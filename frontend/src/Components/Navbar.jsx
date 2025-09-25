@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container d-flex align-items-center justify-content-between">
         {/* Logo */}
         <a href="/" className="brand">
-          🚗 CarHub
+          Bruce CarHire🚗 
         </a>
 
         {/* Links */}

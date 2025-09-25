@@ -8,6 +8,9 @@ import Contact from "./Components/Contact";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
 import AdminDashboard from "./Components/AdminDashboard";
+import Footer from "./Components/Footer";
+import "./App.css";
+
 function App() {
   return (
     <Router>
@@ -24,8 +27,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
         {/* 404 Page */}
-        <Route path="*" element={<h2 className="text-center mt-5">404 - Page Not Found</h2>} />
+        <Route
+          path="*"
+          element={<h2 className="text-center mt-5">404 - Page Not Found</h2>}
+        />
       </Routes>
+
+      {/* Footer is always visible */}
+      <Footer />
     </Router>
   );
 }

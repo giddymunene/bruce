@@ -1,13 +1,13 @@
-
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import API from "../api";
 
 function Cars() {
   const [cars, setCars] = useState([]);
   const [newCar, setNewCar] = useState({ make: "", model: "", year: "", price: "" });
-  const [role, setRole] = useState(localStorage.getItem("role")); // stored after login
+  const [role, setRole] = useState(localStorage.getItem("role")); 
+  const navigate = useNavigate();
 
-  // Fetch cars
   const fetchCars = async () => {
     try {
       const res = await API.get("/cars");
@@ -21,7 +21,6 @@ function Cars() {
     fetchCars();
   }, []);
 
-  // Add new car (admin only)
   const addCar = async () => {
     try {
       await API.post("/cars", newCar);
@@ -32,7 +31,6 @@ function Cars() {
     }
   };
 
-  // Delete car (admin only)
   const deleteCar = async (id) => {
     try {
       await API.delete(`/cars/${id}`);
@@ -42,19 +40,35 @@ function Cars() {
     }
   };
 
-  return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Cars</h1>
+  const handleLogout = () => {
+    localStorage.removeItem("role");
+    localStorage.removeItem("token");
+    setRole(null);
+    navigate("/");
+  };
 
-      {/* Show cars */}
-      <ul className="space-y-2">
+  return (
+    <div className="cars-container">
+      <div className="cars-header">
+        <h1 className="cars-title">Cars</h1>
+        {role && (
+          <button onClick={handleLogout} className="auth-btn logout">
+            Logout
+          </button>
+        )}
+      </div>
+
+      {/* Cars List */}
+      <ul className="cars-list">
         {cars.map((car) => (
-          <li key={car._id} className="border p-2 flex justify-between">
-            <span>{car.year} {car.make} {car.model} - ${car.price}</span>
+          <li key={car._id} className="car-card">
+            <span className="car-info">
+              {car.year} {car.make} {car.model} - ${car.price}
+            </span>
             {role === "admin" && (
               <button 
                 onClick={() => deleteCar(car._id)}
-                className="bg-red-500 text-white px-2 py-1 rounded"
+                className="auth-btn danger"
               >
                 Delete
               </button>
@@ -63,39 +77,36 @@ function Cars() {
         ))}
       </ul>
 
-      {/* Add car form (admin only) */}
+      {/* Add car form */}
       {role === "admin" && (
-        <div className="mt-6">
-          <h2 className="font-semibold mb-2">Add New Car</h2>
-          <input 
-            type="text" placeholder="Make"
-            value={newCar.make}
-            onChange={(e) => setNewCar({ ...newCar, make: e.target.value })}
-            className="border p-1 mr-2"
-          />
-          <input 
-            type="text" placeholder="Model"
-            value={newCar.model}
-            onChange={(e) => setNewCar({ ...newCar, model: e.target.value })}
-            className="border p-1 mr-2"
-          />
-          <input 
-            type="number" placeholder="Year"
-            value={newCar.year}
-            onChange={(e) => setNewCar({ ...newCar, year: e.target.value })}
-            className="border p-1 mr-2"
-          />
-          <input 
-            type="number" placeholder="Price"
-            value={newCar.price}
-            onChange={(e) => setNewCar({ ...newCar, price: e.target.value })}
-            className="border p-1 mr-2"
-          />
-          <button 
-            onClick={addCar}
-            className="bg-green-500 text-white px-4 py-1 rounded"
-          >
-            Add
+        <div className="add-car-form">
+          <h2 className="form-title">Add New Car</h2>
+          <div className="form-row">
+            <input 
+              type="text" placeholder="Make"
+              value={newCar.make}
+              onChange={(e) => setNewCar({ ...newCar, make: e.target.value })}
+            />
+            <input 
+              type="text" placeholder="Model"
+              value={newCar.model}
+              onChange={(e) => setNewCar({ ...newCar, model: e.target.value })}
+            />
+          </div>
+          <div className="form-row">
+            <input 
+              type="number" placeholder="Year"
+              value={newCar.year}
+              onChange={(e) => setNewCar({ ...newCar, year: e.target.value })}
+            />
+            <input 
+              type="number" placeholder="Price"
+              value={newCar.price}
+              onChange={(e) => setNewCar({ ...newCar, price: e.target.value })}
+            />
+          </div>
+          <button onClick={addCar} className="auth-btn">
+            Add Car
           </button>
         </div>
       )}

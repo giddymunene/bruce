@@ -12,7 +12,7 @@ const About = () => {
         <div className="col-md-8 mx-auto">
           <div className="card shadow-sm p-4">
             <p>
-              <strong>CarHub</strong> is a trusted automotive platform based in{" "}
+              <strong>Bruce CarHire 🚗 </strong> is a trusted automotive platform based in{" "}
               <strong>Mombasa, Kenya</strong>. We specialize in helping customers
               explore, buy, and sell cars with ease. Our mission is to make the
               car ownership journey simple, transparent, and enjoyable.
@@ -21,7 +21,7 @@ const About = () => {
               Being located in <strong>Mombasa</strong>, the gateway to East
               Africa, gives us a unique advantage in sourcing and delivering
               quality vehicles. Whether you’re looking for a family car, a
-              luxury ride, or a reliable business vehicle, CarHub is here to
+              luxury ride, or a reliable business vehicle, Bruce CarHire 🚗  is here to
               connect you with the right choice.
             </p>
             <p>
@@ -31,7 +31,7 @@ const About = () => {
               listed on our platform.
             </p>
             <p className="fw-bold text-success text-center mt-3">
-              🚗 CarHub – Your trusted car partner in Mombasa and beyond!
+              Bruce CarHire 🚗  – Your trusted car partner in Mombasa and beyond!
             </p>
           </div>
         </div>
