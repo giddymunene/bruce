@@ -1,36 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Searching for:", query);
+    if (query.trim()) {
+      navigate(`/cars?search=${encodeURIComponent(query)}`);
+    }
   };
 
   return (
     <nav className="custom-navbar">
       <div className="container d-flex align-items-center justify-content-between">
         {/* Logo */}
-        <a href="/" className="brand">
-          Bruce CarHire🚗 
-        </a>
+        <Link to="/" className="brand">
+          Bruce CarHire
+        </Link>
 
-        {/* Links */}
+        {/* Desktop Links */}
         <ul className="nav-links d-none d-md-flex">
-  <li><Link to="/">Home</Link></li>
-  <li><Link to="/cars">Cars</Link></li>
-  <li><Link to="/about">About</Link></li>
-  <li><Link to="/contact">Contact</Link></li>
-  <li><Link to="/register">Register</Link></li>
-  <li><Link to="/login">Login</Link></li>
-  <li><Link to="/admin">Admin</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/cars">Cars</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/register">Register</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/admin">Admin</Link></li>
+   
 
-</ul>
+        </ul>
 
-        {/* Search */}
+        {/* Search Bar (desktop only) */}
         <form className="search-bar d-none d-md-flex" onSubmit={handleSearch}>
           <input
             type="text"
@@ -40,17 +44,7 @@ const Navbar = () => {
           />
           <button type="submit">🔍</button>
         </form>
-
-        
-        <button
-          className="menu-toggle d-md-none"
-          data-bs-toggle="collapse"
-          data-bs-target="#mobileMenu"
-        >
-        </button>
       </div>
-
-     
     </nav>
   );
 };

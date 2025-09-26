@@ -8,10 +8,10 @@ function Footer() {
         {/* Phone Numbers */}
         <div className="footer-contacts">
           <p>
-            <FaPhoneAlt /> <a href="tel:+2547735086">+2547 0773 5086</a>
+            <FaPhoneAlt /> <a href="tel:+2547735086">+2547 1444 4937</a>
           </p>
           <p>
-            <FaPhoneAlt /> <a href="tel:+254705830813">+2547 0583 0813</a>
+            <FaPhoneAlt /> <a href="tel:+254705830813">+2547 6228 8553</a>
           </p>
         </div>
 
@@ -19,7 +19,7 @@ function Footer() {
         <div className="footer-email">
           <p>
             <FaEnvelope />{" "}
-            <a href="mailto:dantechcyber32@gmail.com">dantechcyber32@gmail.com</a>
+            <a href="mailto:bmdr2025@gmail.com">bmdr2025@gmail.com</a>
           </p>
         </div>
 
@@ -52,7 +52,7 @@ function Footer() {
       </div>
 
       <p className="footer-copy">
-        © {new Date().getFullYear()} Bruce CarHire 🚗 . All rights reserved.
+        © {new Date().getFullYear()} Bruce CarHire . All rights reserved.
       </p>
     </footer>
   );

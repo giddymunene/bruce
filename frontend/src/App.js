@@ -7,8 +7,9 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import AdminDashboard from "./Components/AdminDashboard";
+import AdminDashboard from "./Components/AdminMessages";
 import Footer from "./Components/Footer";
+import Booking from "./Components/Booking";
 import "./App.css";
 
 function App() {
@@ -23,9 +24,11 @@ function App() {
         <Route path="/cars" element={<Cars />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/booking" element={<Booking />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
+
         {/* 404 Page */}
         <Route
           path="*"

@@ -1,0 +1,40 @@
+.car-card {
+    perspective: 1000px;
+    width: 220px;
+    height: 300px;
+  }
+  
+  .car-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+  
+  .car-card:hover .car-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .car-card-front,
+  .car-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .car-card-front {
+    background: #fff;
+    padding: 0.5rem;
+  }
+  
+  .car-card-back {
+    background: linear-gradient(to right, #1e3a8a, #9333ea);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
