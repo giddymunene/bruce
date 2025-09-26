@@ -28,7 +28,7 @@ function Footer() {
           <p>
             <FaMapMarkerAlt />{" "}
             <a
-              href="https://www.google.com/maps/place/Kianjokoma"
+              href="https://www.google.com/maps/place/Mombasa"
               target="_blank"
               rel="noreferrer"
             >
