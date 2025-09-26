@@ -1,40 +1,62 @@
-.car-card {
+
+  .car-card {
+    width: 220px;  /* fixed width for uniform row layout */
+    height: 250px; /* consistent height */
     perspective: 1000px;
-    width: 220px;
-    height: 300px;
   }
   
-  .car-card-inner {
+  .card-inner {
     position: relative;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.7s;
+    height: 250px;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
   }
   
-  .car-card:hover .car-card-inner {
+  .car-card:hover .card-inner {
     transform: rotateY(180deg);
   }
   
-  .car-card-front,
-  .car-card-back {
+  /* Front & Back shared styles */
+  .card-front,
+  .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
     backface-visibility: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #faf6fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
   }
   
-  .car-card-front {
-    background: #fff;
-    padding: 0.5rem;
+  /* Front side */
+  .card-front {
+    z-index: 2;
   }
   
-  .car-card-back {
-    background: linear-gradient(to right, #1e3a8a, #9333ea);
-    color: white;
+  /* Back side */
+  .card-back {
     transform: rotateY(180deg);
+    text-align: center;
+  }
+  
+  /* ✅ Logo sizing */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .car-logo {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
   }
   

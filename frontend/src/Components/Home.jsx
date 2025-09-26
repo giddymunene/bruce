@@ -8,34 +8,84 @@ const Home = () => {
 
   const carData = [
     {
-      image: "/images/car1.jpg",
-      title: "Mercedes S-Class",
-      description: "A luxury sedan with unmatched comfort and performance."
+      image: "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
+      title: "MERCEDES-BENZ",
+      description: "Luxury Redefined."
     },
     {
-      image: "/images/car2.jpg",
-      title: "Range Rover Sport",
-      description: "Powerful SUV for both city drives and off-road adventures."
+      image: "https://www.carlogos.org/car-logos/bmw-logo.png",
+      title: "BMW",
+      description: "Ultimate Driving Machines."
     },
     {
-      image: "/images/car3.jpg",
-      title: "BMW M5",
-      description: "High-performance sports sedan with a bold design."
+      image: "https://www.carlogos.org/car-logos/mazda-logo.png",
+      title: "MAZDA",
+      description: "Driving Dynamics."
     },
     {
-      image: "/images/car4.jpg",
-      title: "Audi Q7",
-      description: "A premium SUV combining technology, comfort, and power."
+      image: "https://www.carlogos.org/car-logos/toyota-logo.png",
+      title: "TOYOTA",
+      description: "Dominating the Market."
     },
     {
-      image: "/images/car5.jpg",
-      title: "Porsche 911",
+      image: "https://www.carlogos.org/car-logos/porsche-logo.png",
+      title: "PORSCHE",
+      description: "Known for its speed, performance, engineering, and iconic design."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/honda-logo.png",
+      title: "HONDA",
+      description: "Engineering Excellence."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/subaru-logo.png",
+      title: "SUBARU",
       description: "Iconic sports car with thrilling performance and style."
-    }
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/ford-logo.png",
+      title: "FORD",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/audi-logo.png",
+      title: "AUDI",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/lexus-logo.png",
+      title: "LEXUS",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/nissan-logo.png",
+      title: "NISSAN",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/volkswagen-logo.png",
+      title: "VOLKSWAGEN",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/volvo-logo.png",
+      title: "VOLVO",
+      description: "Versatility and Performance."
+    },
+    {
+      image: "https://www.carlogos.org/car-logos/suzuki-logo.png",
+      title: "SUZUKI",
+      description: "Versatility and Performance."
+    },
+
   ];
 
   return (
     <div className="home-container">
+      {/* ✅ Our Brands Header */}
+      <h1 className="brands-header">Our Brands</h1>
+
+      {/* Car Cards */}
       <div className="cards-row">
         {carData.map((car, index) => (
           <CarCard
@@ -47,6 +97,7 @@ const Home = () => {
         ))}
       </div>
 
+      {/* Call to Action */}
       <div className="home-text">
         <h2>Let Your Arrival Announce Your Personality</h2>
         <h3>HIRE A CAR FROM US TODAY!</h3>
