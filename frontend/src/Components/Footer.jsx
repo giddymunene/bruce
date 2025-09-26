@@ -8,10 +8,10 @@ function Footer() {
         {/* Phone Numbers */}
         <div className="footer-contacts">
           <p>
-            <FaPhoneAlt /> <a href="tel:+2547735086">+2547 1444 4937</a>
+            <FaPhoneAlt /> <a href="tel:+2547 1444 4937">+2547 1444 4937</a>
           </p>
           <p>
-            <FaPhoneAlt /> <a href="tel:+254705830813">+2547 6228 8553</a>
+            <FaPhoneAlt /> <a href="tel:+2547 6228 8553">+2547 6228 8553</a>
           </p>
         </div>
 

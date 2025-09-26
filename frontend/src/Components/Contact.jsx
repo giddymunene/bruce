@@ -46,9 +46,9 @@ const Contact = () => {
         <div className="col-md-6 mb-4">
           <div className="card contact-card p-4">
             <h3 className="text-secondary">Get in Touch</h3>
-            <p><strong>Email:</strong> support@carhub.com</p>
-            <p><strong>Phone:</strong> +123 456 7890</p>
-            <p><strong>Address:</strong> 123 CarHub Street, Nairobi, Kenya</p>
+            <p><strong>Email:</strong> bmdr2025@gmail.com</p>
+            <p><strong>Phone:</strong> +2547 6228 8553</p>
+            <p><strong>Address:</strong>Mombasa, Kenya</p>
           </div>
         </div>
 
